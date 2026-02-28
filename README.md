@@ -1,6 +1,7 @@
 # AI Chatbox
 
 **Live demo:** https://tanhoang0803.github.io/AI_ChatBox/
+**Backend API:** https://backend-production-f26c.up.railway.app
 
 A full-stack AI-powered chatbox web application built with React, Node.js/Express, and the Anthropic Claude API.
 
@@ -146,15 +147,16 @@ The GitHub Actions workflow in `.github/workflows/deploy.yml` automatically buil
 
 **One-time setup in your repo settings:**
 1. Go to **Settings → Pages → Source** → select **GitHub Actions**
-2. Go to **Settings → Secrets → Actions** → add secret `VITE_API_URL` set to your backend URL (e.g. `https://ai-chatbox-backend.onrender.com`)
+2. Go to **Settings → Secrets → Actions** → add secret:
+   - Name: `VITE_API_URL`
+   - Value: `https://backend-production-f26c.up.railway.app`
 
-### Backend — Render (free tier)
+### Backend — Railway (deployed)
 
-A `render.yaml` is included for one-click backend deployment:
-1. Sign in at [render.com](https://render.com) and click **New → Blueprint**
-2. Connect your GitHub repo — Render will detect `render.yaml` automatically
-3. Set the `ANTHROPIC_API_KEY` environment variable in the Render dashboard
-4. Copy the Render service URL and paste it as the `VITE_API_URL` GitHub secret above
+The backend is deployed on Railway and auto-deploys on every push to `master`.
+
+- **Service URL:** https://backend-production-f26c.up.railway.app
+- **Health check:** https://backend-production-f26c.up.railway.app/api/health
 
 ---
 
